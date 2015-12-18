@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+  	xmlns:rich="http://richfaces.org/rich"
+  	xmlns:t="http://myfaces.apache.org/tomahawk"
+  	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:de="http://dataeasy.com.br/docflow">
+      
+	<c:if test="#{ACS_MODAL_VIEW_EXPIRED}">
+		<h:panelGroup layout="block">
+			<a4j:jsFunction name="showModalViewExpired" action="#{userSessionBean.removerParamSessao('ACS_MODAL_VIEW_EXPIRED')}" onbegin="showModalTmFixoCentro('modalViewExpired', 350);"/>
+		
+		  	<rich:popupPanel id="modalViewExpired" header="#{msg.docflowAtencao}" styleClass="docflowModal" modal="true" autosized="true" resizeable="false" onshow="focusByIdElement('btnRedirectDashBoard');">
+		  		<f:facet name="controls">
+					<h:graphicImage library="docflow" styleClass="closeModal" onclick="closePopup('modalViewExpired');" name="#{msg.docflowImgSpacer}" />
+				</f:facet>
+		  		<h:panelGrid columns="3">
+			 		<h:graphicImage library="docflow" name="#{msg.acsImgAtencao}" style="border:0px;"/>
+			 		<de:spacer width="20"/>
+			 		<h:outputText value="#{msg.docflowMsgViewExpired}" />
+			 	</h:panelGrid>
+			 	<h:panelGrid columns="1" styleClass="centered">
+			 		<input type="button" id="btnRedirectDashBoard" value="#{msg.docflowFechar}" class="btn" onclick="closePopup('modalViewExpired');"/>	
+				</h:panelGrid>
+		 	</rich:popupPanel>
+		
+			<script>
+				showModalViewExpired();
+			</script>
+		</h:panelGroup>
+	</c:if>
+</ui:composition>

@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<rich:toolbar itemSeparator="none" >
+		<!-- CADASTROS -->
+		<rich:dropDownMenu hideDelay="0" styleClass="cadastrosicon" >
+				<f:facet name="label">
+						<h:outputText value="#{msg.docflowMenuCadastros}" />
+				</f:facet>
+				
+				<rich:menuGroup label="#{msg.docflowDocumentos}">
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowMenuModelosDeDocumentos}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowDocumentoTiposDeDocumento}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+				</rich:menuGroup>
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowMenuUnidade}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowMenuTipoProcesso}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				<rich:menuGroup label="#{msg.docflowMenuDossies}">
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowTipoDossieMenu}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowTipoPecaMenu}"
+					               action="#{tipoContentBean.listar}">
+					</rich:menuItem>
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowRotuloMenu}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowEstadoAtualizacaoMenu}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+				</rich:menuGroup>
+				
+		</rich:dropDownMenu>
+	</rich:toolbar>
+</ui:composition>

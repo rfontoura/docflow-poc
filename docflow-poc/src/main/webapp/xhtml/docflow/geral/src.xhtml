@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:de="http://dataeasy.com.br/docflow"
+	template="/xhtml/docflow/geral/base.xhtml">
+
+	<ui:define name="corpo">
+		<ui:include src="/xhtml/docflow/geral/menuBarra.xhtml" /> <!-- Menu de funcionalidades. -->
+		<ui:insert name="dashBoard">
+			<h:form prependId="false" id="formBody">
+				<ui:insert name="barraSuperior"/> <!-- Barra de titulo e pesquisa contextual -->
+				<!-- de:userTrack/ -->
+				<div id="dashboard">
+					<ui:insert name="menuAcao"/>
+					<ui:insert name="body"/>
+				</div>
+			</h:form>
+		</ui:insert>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,169 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<rich:toolbar itemSeparator="none" rendered="false" height="auto">
+		
+		<!-- DOCUMENTO -->
+		<rich:dropDownMenu hideDelay="0" styleClass="documentoicon">
+				<f:facet name="label">
+						<h:outputText value="#{msg.docflowDocumentos}" />
+				</f:facet>
+				
+				<rich:menuItem immediate="true"
+			                   label="#{msg.docFlowPesquisar}"
+			                   action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuSeparator />
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowNovo}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowAssinadoDigitalDocs}"
+				               action="#{fakeBean.fakeAction}"
+				               onclick="showModalTmFixoCentro('modalStatusSubmit');">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowImprimir}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+                <!-- IMPRIMIR ETIQUETA -->
+                <rich:menuItem immediate="false" 
+                			   label="#{msg.docflowImprimirEtiquetas}" 
+                			   action="#{fakeBean.fakeAction}">
+                </rich:menuItem>
+                				 
+                <!-- IMPRIMIR ETIQUETA -->
+                <rich:menuItem immediate="false" 
+                			   label="#{msg.docflowImprimirEtiquetas}" 
+                			   action="#{fakeBean.fakeAction}"   
+                			   mode="ajax">
+                </rich:menuItem>
+		</rich:dropDownMenu>
+		
+		<!-- LOTE -->
+		<rich:dropDownMenu hideDelay="0" styleClass="loteicon">
+				<f:facet name="label">
+						<h:outputText value="#{msg.docflowLotes}" />
+				</f:facet>
+				
+				<!-- LOTE PADRÃO -->
+				<rich:menuGroup label="#{msg.docflowPadrao}">
+					<rich:menuItem immediate="true"
+					               label="#{msg.docFlowPesquisar}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+					
+					<rich:menuSeparator />
+					
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowNovo}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+				</rich:menuGroup>
+                
+				<!-- LOTE TRANSFERÊNCIA -->
+				<rich:menuGroup label="#{msg.docflowTransferencia}">
+					<rich:menuItem immediate="true"
+					               label="#{msg.docFlowPesquisar}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+					
+					<rich:menuSeparator />
+					
+					<rich:menuItem immediate="true"
+					               label="#{msg.docflowNovo}"
+					               action="#{fakeBean.fakeAction}">
+					</rich:menuItem>
+				</rich:menuGroup>
+		</rich:dropDownMenu>
+		
+		<!-- PROTOCOLO -->
+		<rich:dropDownMenu hideDelay="0" styleClass="protocoloicon">
+				<f:facet name="label">
+						<h:outputText value="#{msg['docflowMenuProtocoloPADRAO']}"/>
+				</f:facet>
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowConsultaPublicaConsultaPorProtocolo}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docFlowPesquisar}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuSeparator />
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowMenuProtocolarNew}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowImportar}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+
+		</rich:dropDownMenu>
+		
+		<!-- PESQUISA GLOBAL -->
+ 		<h:commandLink action="#{fakeBean.fakeAction}"
+		               value="#{msg.docflowPesquisarHdr}"
+		               immediate="true"
+		               styleClass="consultaIcon">
+		</h:commandLink>
+		
+		<!-- GUIAS -->
+		<rich:dropDownMenu styleClass="guiaIcon" hideDelay="0">
+			<f:facet name="label">
+				<h:outputText value="#{msg.docflowMenuGuias}" />
+			</f:facet>
+			
+			<!-- GUIA DE TRAMITACAO  -->
+			<rich:menuGroup label="#{msg.docflowMenuGuiaTramitacao}">
+				<rich:menuItem immediate="true"
+				               label="#{msg.docFlowPesquisar}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+				
+				<rich:menuSeparator />				
+				
+				<rich:menuItem immediate="true"
+				               label="#{msg.docflowGuiaTramitacaoGerar}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+			</rich:menuGroup>
+			
+			<rich:menuSeparator />
+			
+			<!-- GUIA DE TRANSFERENCIA -->
+			<rich:menuGroup label="#{msg.sgaMenuAcaoGuiaTransferencia}">
+				<rich:menuItem immediate="true"
+				               label="#{msg.docFlowPesquisar}"
+				               action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+			
+				<rich:menuSeparator />
+				
+				<rich:menuItem immediate="true"
+								label="#{msg.sgaMenuAcaoIncluirNova}"
+								action="#{fakeBean.fakeAction}">
+				</rich:menuItem>
+			</rich:menuGroup>
+		
+		</rich:dropDownMenu>
+		
+	</rich:toolbar>
+</ui:composition>

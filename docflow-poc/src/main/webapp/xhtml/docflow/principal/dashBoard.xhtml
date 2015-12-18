@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:de="http://dataeasy.com.br/docflow"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/xhtml/docflow/geral/src.xhtml">
+
+	<ui:define name="body">
+
+		<h:outputStylesheet library="docflow" name="css/jquery/jscrollpane/jquery.jscrollpane.css"/>
+		<h:outputScript library="docflow" name="js/jquery/mousewheel/jquery.mousewheel.js" target="head"/>
+		<h:outputScript library="docflow" name="js/jquery/jscrollpane/jquery.jscrollpane.min.js" target="head"/>
+
+		<rich:panel>
+
+			<!-- MEUS ATALHOS -->
+			<div style="display: inline-block; float:left; margin-top:20px;">
+				<!-- CRIAR DOCUMENTO -->
+				<h:commandLink style="display:block;" immediate="true" action="#{fakeBean.fakeAction}">
+	 				<div class="menuRapido">
+	  					<h:graphicImage library="docflow" style="border: 0px;" name="#{msg.docflowDashBoardImgNewDoc}" />
+						<p><h:outputText value="#{msg.docflowDashBoardNewDoc}"/></p>
+				    </div>
+				</h:commandLink>
+
+				<!-- CRIAR PROCESSO -->
+				<h:commandLink immediate="true" action="#{fakeBean.fakeAction}">
+  					<div class="menuRapido">
+   						<h:graphicImage library="docflow" style="border: 0px;" name="#{msg.docflowDashBoardImgNewProc}" />
+						<p><h:outputText value="#{msg.docflowDashBoardNewProc}"/></p>
+					</div>
+				</h:commandLink>
+
+				<!-- CRIAR SOLICITACAO DE SERVICO -->
+				<h:commandLink immediate="true" action="#{fakeBean.fakeAction}">
+  					<div class="menuRapido">
+   						<h:graphicImage library="docflow" style="border: 0px;" name="#{msg.docflowDashBoardImgNewSolicServico}" />
+						<p><h:outputText value="#{msg.docflowDashBoardNewSolicServico}"/></p>
+					</div>
+				</h:commandLink>
+
+				<!-- RECEBER VIA CODIGO BARRAS -->
+				<h:commandLink immediate="true" action="#{fakeBean.fakeAction}">
+  					<div class="menuRapido">
+   						<h:graphicImage library="docflow" style="border: 0px;" name="#{msg.docflowIconBarCode}" />
+						<p><h:outputText value="#{msg.docflowDashBoardReceberConteudo}"/></p>
+					</div>
+				</h:commandLink>
+
+				<!-- TRAMITAR VIA CODIGO BARRAS -->
+				<h:commandLink immediate="true" action="#{fakeBean.fakeAction}">
+  					<div class="menuRapido">
+   						<h:graphicImage library="docflow" style="border: 0px;" name="#{msg.docflowIconBarCode}" />
+						<p>
+							<h:outputText value="#{msg.docflowDashBoardTramitarConteudo}"/>
+						</p>
+					</div>
+				</h:commandLink>
+
+				<h:panelGroup layout="block" style="margin:8px;display:block;height:1px;background-color:#e0e0e0;border-top:1px solid #fff;"/>
+			</div>
+
+		</rich:panel>
+	</ui:define>
+    
+    <ui:define name="includes">
+        <ui:include src="/xhtml/docflow/visualizador/visualizador-groupdocs.xhtml" />
+    </ui:define>
+
+</ui:composition>

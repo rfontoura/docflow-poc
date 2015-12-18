@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<rich:toolbar rendered="false">
+				
+		<!-- PREFERENCIAS DO USUARIO -->
+		<h:commandLink action="#{fakeBean.fakeAction}" 
+		               value="#{msg.docflowMenuPreferenciasUsuario}"
+		               immediate="true"
+		               styleClass="preferenciasicon"/>
+		               				
+		<!-- CONFIGURAR AUSENCIAS -->
+		<h:commandLink immediate="true"
+		               value="#{msg.docflowMenuConfigurarAusencias}"
+		               action="#{fakeBean.fakeAction}"
+		               styleClass="ausenciaicon"/>
+		
+		<!-- MODELOS PERSONALIZADOS -->
+		<h:commandLink immediate="true"
+		               value="#{msg.docflowMenuModelosPersonalizados}"
+		               action="#{fakeBean.fakeAction}"
+		               styleClass="modeloicon" />
+				
+	</rich:toolbar>
+</ui:composition>

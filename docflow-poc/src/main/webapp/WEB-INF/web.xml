@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <description>aa</description>
+    <display-name>aa</display-name>
+
+    <!-- PARAMETROS -->
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+        <param-value>2</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>
+	    	/WEB-INF/jsf/faces-config.xml,
+	    	/WEB-INF/jsf/navigation-rules-docflow.xml
+	    </param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.numberOfViewsInSession</param-name>
+        <param-value>2</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.numberOfLogicalViews</param-name>
+        <param-value>2</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.allowTextChildren</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.SKIN</param-name>
+        <param-value>plain</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.enableControlSkinning</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.resourceOptimization.enabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.resourceOptimization.compressionStages</param-name>
+        <param-value>All</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.resourceOptimization.packagingStages</param-name>
+        <param-value>All</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>org.richfaces.fileUpload.createTempFiles</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>net.sf.jsfcomp.chartcreator.USE_CHARTLET</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <!-- LISTENERS -->
+    <listener>
+        <listener-class>br.com.dataeasy.docflow4.web.PreConfigurarListener</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- GZIP -->
+    <filter>
+        <filter-name>compressionFilter</filter-name>
+        <filter-class>com.googlecode.webutilities.filters.CompressionFilter</filter-class>
+        <init-param>
+            <param-name>compressionThreshold</param-name>
+            <param-value>1024</param-value> <!-- Define um tamanho minino (bytes) para a compressao -->
+        </init-param>
+        <init-param>
+            <param-name>ignoreURLPattern</param-name>
+            <param-value>.*\.(flv|mp3|mp4|png|gif|jpg|tiff|bmp|mpg|jpeg|pdf)</param-value> <!-- Define as URLs que nao serao comprimidas -->
+        </init-param>
+        <init-param>
+            <param-name>ignoreMIMEPattern</param-name>
+            <param-value>image/.*|video/.*|multipart/x-gzip</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>compressionFilter</filter-name>
+        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>/org.richfaces.resources/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>FacesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>/xhtml/docflow/geral/index.html</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <mime-mapping>
+        <extension>ico</extension>
+        <mime-type>image/x-icon</mime-type>
+    </mime-mapping>
+
+</web-app>

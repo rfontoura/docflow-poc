@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<rich:toolbar itemSeparator="none" rendered="false">
+		<!-- CADASTROS -->
+		<rich:dropDownMenu hideDelay="0" styleClass="cadastrosicon">
+				<f:facet name="label">
+					<h:outputText value="#{msg.docflowMenuCadastros}"/>
+				</f:facet>
+		        <rich:menuItem rendered="true" immediate="true" label="#{msg.bpmMenuAplicacaoBpmFluxo}" action="#{fakeBean.fakeAction}"/>
+		        <rich:menuItem immediate="true" label="#{msg.bpmPapelLabelMenu}" action="#{fakeBean.fakeAction}"/>
+		        <rich:menuItem rendered="false" immediate="true" label="#{msg.bpmMenuTarefaBpm}" action="#{fakeBean.fakeAction}"/>
+		        <rich:menuItem immediate="true" label="#{msg.bpmModificarFluxo}" action="#{fakeBean.fakeAction}"/>
+		</rich:dropDownMenu>
+		
+		<!-- GERENCIAR FLUXOS COM ALGUM TIPO DE PROBLEMA -->
+		<h:commandLink action="#{fakeBean.fakeAction}"
+		               value="#{msg.docflowGerenciarFluxosProblematicos}"
+		               immediate="true"
+		               styleClass="auditaricon">
+		</h:commandLink>
+		
+		<!-- GERENCIAR PRAZOS ATIVIDADE -->
+		<h:commandLink action="#{fakeBean.fakeAction}"
+		               value="#{msg.docflowGerenciarAtividades}"
+		               immediate="true"
+		               styleClass="auditaricon">
+		</h:commandLink>
+		
+	</rich:toolbar>
+</ui:composition>

@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:de="http://dataeasy.com.br/docflow">
+	
+	<rich:popupPanel styleClass="docflowModal" id="modalSobre" resizeable="false" autosized="true" moveable="true" modal="true">
+		
+		<f:facet name="header">
+			<h:outputText value="#{msg.docflowSobre }"/>
+		</f:facet>
+		
+		<f:facet name="controls">
+			<h:graphicImage library="docflow" styleClass="closeModal" onclick="closePopup('modalSobre');" name="#{msg.docflowImgSpacer}" />
+		</f:facet>
+		
+		<de:spacer width="480"/>	
+		
+		<h:panelGrid styleClass="centered" columnClasses="alignCenter">
+			
+			22/12/2015
+			
+			<h:panelGroup layout="block">
+				<h:outputText styleClass="txtPequeno" value="&#169; 2004-"/>
+				<h:outputText value="10-10-2015" />
+				<h:outputText styleClass="txtPequenoNegrito" value="#{msg.docflowDataEasy} - "/> 
+				<h:outputText styleClass="txtPequeno" value="#{msg.docflowCopyMsg}"/>
+			</h:panelGroup>
+			
+			<de:spacer height="15"/>
+		</h:panelGrid>
+		
+		<h:panelGrid width="100%">
+			<de:spacer height="5"/>
+			<de:separator />
+			<de:spacer height="5"/>
+			
+			<h:panelGrid styleClass="txtMensagemSobre1">
+				<h:outputText value="#{msg.docflowMensagemSobre1}" />													
+			</h:panelGrid>
+			
+			<de:spacer height="5"/>
+			
+			<h:panelGrid styleClass="txtMensagemSobre2">
+				<h:outputText value="#{msg.docflowMensagemSobre2}" />													
+			</h:panelGrid>
+				
+			<de:spacer height="3"/>
+			
+			<h:panelGroup styleClass="txtMensagemSobre2" layout="block">
+				<h:outputText value="#{msg.docflowModeloVersao}:"/>
+				<h:outputText value=" 15.3.1" styleClass="txtMensagemSobre1"/>
+				<h:outputText value=" - 25/01/2018 " styleClass="txtMensagemSobre1"/>
+			</h:panelGroup>
+			
+			<h:panelGrid styleClass="centered">
+				<input id="botaoFecharErro" type="button" value="#{msg.docflowFechar}" class="btn" onclick="closePopup('modalSobre');"/>
+			</h:panelGrid>
+			
+		</h:panelGrid>
+		
+	</rich:popupPanel>
+</ui:composition>

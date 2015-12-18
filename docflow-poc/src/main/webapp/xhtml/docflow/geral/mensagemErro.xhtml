@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+  	xmlns:rich="http://richfaces.org/rich"
+  	xmlns:t="http://myfaces.apache.org/tomahawk"
+  	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:de="http://dataeasy.com.br/docflow">
+	
+	<!-- Atencao: os ids 'corpoModalMsg' e 'jsModalMsg' sao utilizados na classe ACSMessageListener se eles forem alterados alterar na classe tambem -->
+      
+	<h:panelGroup layout="block">
+	  	<rich:popupPanel id="modalMsg" header="#{msg.docflowAtencao}" styleClass="docflowModal" modal="true" autosized="true" resizeable="false" onshow="focusByIdElement('botaoFechar');">
+			<f:facet name="controls">
+				<h:graphicImage library="docflow" styleClass="closeModal" onclick="closePopup('modalMsg');" name="#{msg.docflowImgSpacer}" />
+			</f:facet>
+	  		<h:panelGrid id="corpoModalMsg" columns="3">
+	 			<h:graphicImage library="docflow" name="#{msg.acsImgErro}" style="border:0px;" rendered="#{ACS_TIPO_MENSAGEM eq 'ERRO'}"/>
+		 		<h:graphicImage library="docflow" name="#{msg.acsImgSucesso}" style="border:0px;" rendered="#{ACS_TIPO_MENSAGEM eq 'SUCESSO'}"/>
+		 		<h:graphicImage library="docflow" name="#{msg.acsImgAtencao}" style="border:0px;" rendered="#{ACS_TIPO_MENSAGEM eq 'ATENCAO'}"/>
+		 		<de:spacer width="20"/>
+		 		<t:messages replaceIdWithLabel="true" layout="list" rendered="#{ACS_TIPO_MENSAGEM eq 'ERRO'}"/>
+		 		<t:messages replaceIdWithLabel="true" layout="table" rendered="#{ACS_TIPO_MENSAGEM eq 'SUCESSO'}"/>
+		 		<t:messages replaceIdWithLabel="true" layout="table" rendered="#{ACS_TIPO_MENSAGEM eq 'ATENCAO'}"/>
+		 	</h:panelGrid>
+		 	<h:panelGrid columns="1" styleClass="centered">
+		 		<input type="button" id="botaoFechar" value="#{msg.docflowFechar}" class="btn" onclick="closePopup('modalMsg');"/>
+			</h:panelGrid>
+	 	</rich:popupPanel>
+		
+		<h:panelGroup id="jsModalMsg">
+			<c:if test="#{ACS_MODAL_MENSAGEM}">
+				<c:if test="#{ACS_TIPO_MENSAGEM eq 'SUCESSO'}">
+					<script>
+						showModalMsgSucess('modalMsg', 350, null, null);
+					</script>
+				</c:if>
+				<c:if test="#{ACS_TIPO_MENSAGEM eq 'ERRO' or ACS_TIPO_MENSAGEM eq 'ATENCAO'}">
+					<script>
+						showModalTmFixoCentro('modalMsg', 350);
+					</script>
+				</c:if>
+			</c:if>
+		</h:panelGroup>
+	</h:panelGroup>
+</ui:composition>

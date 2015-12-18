@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:de="http://dataeasy.com.br/docflow" xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<h:form prependId="false" id="formVisualizador">
+
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/jquery-ui-1.10.3.min.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/knockout-3.0.0.min.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/turn.min.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/modernizr.2.6.2.Transform2d.min.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/util.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/visualizador-groupdocs.js" charset="utf-8" />
+        <script type="text/javascript">
+        	Visualizador.init.configurarModernizrCssTransformers();
+        </script>
+        
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/installableViewer.min.js" charset="utf-8" />
+        <script type="text/javascript">
+        	Visualizador.init.configurarApplicationPath();
+        </script>
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/GroupdocsViewer.all.min.js" charset="utf-8" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/bootstrap-groupdocs.min.css']}" rel="stylesheet" type="text/css" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/GroupdocsViewer.all.min.css']}" rel="stylesheet" type="text/css" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/jquery-ui-1.10.3.dialog.min.css']}" rel="stylesheet" type="text/css" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/jquery.tinyscrollbar.min.js" charset="utf-8" />
+        <h:outputScript library="docflow" name="js/visualizador/groupdocs/GroupdocsAnnotation.all.min.js" charset="utf-8" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/Annotation.min.css']}" rel="stylesheet" type="text/css" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/Annotation.Toolbox.min.css']}" rel="stylesheet" type="text/css" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/fixes.css']}" rel="stylesheet" type="text/css" />
+        <link href="#{resource['docflow:css/visualizador/groupdocs/visualizador.css']}" rel="stylesheet" type="text/css" />
+        <!--[if IE]><style type=\"text/css\"> input[type=\"text\"].input_search { padding-right: 30px; width: 65px; } </style> <![endif]-->
+        <!--[if IE 9]><style type=\"text/css\"> pan.input_search_clear { left: 140px; } </style> <![endif]-->
+        <script type="text/javascript">
+        	Visualizador.init.configurarContainer();
+        </script>
+
+		<h:panelGroup layout="block">
+			<rich:popupPanel id="painelVisualizador" modal="true" autosized="true" style="overflow: hidden;"
+				onmaskclick="Visualizador.fecharPainel(); return false;" controlsClass="wraptocenter">
+				<f:facet name="header">
+					<span id="tituloVisualizador"></span>
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#" onclick="Visualizador.maximizar(); return false;" title="#{msg.docflowViewerAbrirEmJanela}">
+						<h:graphicImage library="docflow" name="images/maximize.gif" style="border-style: none;" />
+					</h:outputLink>
+					<de:spacer height="15" width="2" />
+					<h:outputLink value="#" onclick="Visualizador.fecharPainel(); return false;" title="#{msg.docflowViewerFechar}">
+						<h:graphicImage library="docflow" name="images/close.gif" style="border-style: none;" />
+					</h:outputLink>
+				</f:facet>
+                <div id="container-visualizador"></div>
+			</rich:popupPanel>
+
+		</h:panelGroup>
+	</h:form>
+
+</ui:composition>

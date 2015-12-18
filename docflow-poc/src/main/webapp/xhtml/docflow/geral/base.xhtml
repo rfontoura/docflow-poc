@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+   	xmlns:h="http://java.sun.com/jsf/html"
+   	xmlns:ui="http://java.sun.com/jsf/facelets"
+   	xmlns:rich="http://richfaces.org/rich"
+   	xmlns:a4j="http://richfaces.org/a4j"
+   	xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    <f:view contentType="text/html">
+		
+		<h:head>
+			<title>teste</title>
+		</h:head>
+		
+		<h:body>
+			<h:outputStylesheet library="docflow" name="css/main/main.css"/>
+			<h:outputScript library="docflow" name="js/main/main.js" target="head"/>
+			<h:outputScript library="docflow" name="js/richfaces/popupPanel/popup.js" target="head"/>
+			<h:outputScript library="docflow" name="js/jquery/menuAcoes/menu_acoes.js" target="head"/>
+			<h:outputScript library="docflow" name="js/richfaces/richSelect/richSelectFunctions.js" target="head" rendered="true"/>
+			<h:outputScript library="docflow" name="js/jquery/dropotron/jquery.dropotron.min.js" target="head" />
+			
+			<h:outputText value="#{applicationBean.newRelicBrowserTimingHeader}" escape="false"/>
+			
+			<div class="de-slt">
+				<h:form>
+					<nav id="de-slt-btn">
+						<ul>
+							<li style="height: 26px;">
+								<a href="#"><h:graphicImage library="docflow" name="images/atalhos.png"/></a>
+								<ul style="display: none;">
+									<table border="0" cellpadding="4" cellspacing="4" style="vertical-align: inherit;">
+										<tr>
+											<td>
+												<h:panelGroup styleClass="de-slt-act" layout="block">
+													<h:commandLink styleClass="de-slt-cmd" action="#{fakeBean.fakeAction}">
+														<h4> <h:graphicImage library="docflow" name="images/interface/processoa.png" style="border: none"/></h4>
+														<h:outputText style="width:100%; text-align: center;" styleClass="ellipsis" value="#{msg.docflowPesquisarMeuProcesso}"/><br/>
+													</h:commandLink>
+												</h:panelGroup>
+											</td>
+											<td>
+												<h:panelGroup styleClass="de-slt-act" layout="block">
+													<h:commandLink styleClass="de-slt-cmd" action="#{fakeBean.fakeAction}">
+														<h4><h:graphicImage library="docflow" name="images/interface/documentoa.png" style="border: none"/></h4>
+														<h:outputText style="width:100%; text-align: center;" styleClass="ellipsis" value="#{msg.docflowPesquisarMeuDocumento}"/><br/>
+													</h:commandLink>
+												</h:panelGroup>
+											</td>
+										</tr>
+									</table>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</h:form>
+				<script type="text/javascript">
+					$(function() {
+						$('#de-slt-btn > ul').dropotron({ 
+							offsetY: -10
+							});
+						});
+				</script>
+			</div>
+			
+			<div id="userdep">
+				<h:panelGroup id="formSwitchDpto">
+					Blah blah blah
+					<br/>
+				</h:panelGroup>
+			</div>
+			
+			<div id="navWrapper">
+				<h:form id="formTabs" prependId="false">
+					<h:panelGroup id="painelAbas">
+						
+						<!-- Principal -->
+						<h:commandLink action="#{fakeBean.fakeAction}"
+					                   value="#{msg.docflowMenuPrincipal}"
+					                   styleClass="navOn">
+							           <f:setPropertyActionListener value="1" target="#{tabsBean.tabSelecionado}" />
+							           <div id="abadOn"></div>
+						</h:commandLink>
+						<h:commandLink action="#{fakeBean.fakeAction}"
+				                       value="#{msg.docflowMenuPrincipal}"
+				                       styleClass="navOff">
+								       <div id="abad"></div>
+						</h:commandLink>
+						 			
+						<!-- Opcoes do Usuario -->
+						<h:commandLink action="#{usuarioConfigBean.editarConfiguracoes}"
+				               		   value="#{fakeBean.fakeAction}"
+				                       styleClass="navOn"
+				                       rendered="false">
+								       <div id="abadOn"></div>
+						</h:commandLink>
+						<h:commandLink action="#{fakeBean.fakeAction}"
+				                       value="#{msg.docflowMenuOpcoesDoUsuario}"
+				                       styleClass="navOff">
+						               <div id="abad"/>
+						</h:commandLink>
+						 			
+						<!-- Administracao -->
+						<h:commandLink action="#{fakeBean.fakeAction}"
+				                       value="#{msg.docflowMenuAdministracao}"
+				                       styleClass="navOn">
+				                       <div id="abadOn"></div>
+				       	</h:commandLink>
+						<h:commandLink action="#{fakeBean.fakeAction}"
+				                       value="#{msg.docflowMenuAdministracao}"
+				                       styleClass="navOff">
+				                       <div id="abad"></div>
+						</h:commandLink>
+
+			 			<!-- WorkFlow -->
+			 			<h:commandLink action="#{fakeBean.fakeAction}"
+			 			               value="#{msg.docflowWorkflow}"
+			 			               styleClass="navOn">
+			 			               <div id="abadOn"></div>
+			 			</h:commandLink>
+			 			<h:commandLink action="#{fakeBean.fakeAction}"
+			 			               value="#{msg.docflowWorkflow}"
+			 			               styleClass="navOff">
+			 						   <div id="abad"></div>
+			 			</h:commandLink>
+			 			
+					 	<!-- Gerenciamento -->
+			 			<h:commandLink action="#{relatorioBean.entrar}"
+			 			               value="#{msg.docflowMenuGerenciamento}"
+			 			               styleClass="navOn"
+			 			               rendered="false">
+			 			               <f:setPropertyActionListener value="5" target="#{tabsBean.tabSelecionado}" />
+			 						   <div id="abadOn"></div>
+			 			</h:commandLink>
+			 			<h:commandLink action="#{fakeBean.fakeAction}"
+			 			               value="#{msg.docflowMenuGerenciamento}"
+			 			               styleClass="navOff"
+			 			               rendered="false">
+			 			               <f:setPropertyActionListener value="5" target="#{tabsBean.tabSelecionado}" />
+			 						   <div id="abad"></div>
+			 			</h:commandLink>
+
+			 			<!-- Gestao Arquivistica -->
+			 			<h:commandLink action="#{fakeBean.fakeAction}"
+			 			               value="#{msg.docflowGestaoArquivistica}"
+			 			               styleClass="navOn"
+			 			               rendered="false">
+			 			               <div id="abadOn"></div>
+			 			</h:commandLink>
+			 			<h:commandLink action="#{fakeBean.fakeAction}"
+			 			               value="#{msg.docflowGestaoArquivistica}"
+			 			               styleClass="navOff"
+			 			               rendered="false">
+			 						   <div id="abad"></div>
+			 			</h:commandLink>
+					</h:panelGroup>
+				</h:form>
+			</div>
+			
+			<ui:insert name="corpo"/>
+			<ui:insert name="popup"/>
+			<ui:insert name="includes"/>
+			<ui:insert name="scripts"/>
+			<ui:insert name="modalSobre"><ui:include src="/xhtml/docflow/geral/modalSobre.xhtml"/></ui:insert>
+			<ui:insert name="mensagemErro"><ui:include src="/xhtml/docflow/geral/mensagemErro.xhtml"/></ui:insert>
+			<ui:insert name="mensagemViewExpired"><ui:include src="/xhtml/docflow/geral/modalViewExpired.xhtml"/></ui:insert>
+			<ui:insert name="modalSubmit"><ui:include src="/xhtml/docflow/geral/modalSubmit.xhtml"/></ui:insert>
+		</h:body>
+    </f:view>  
+</html>

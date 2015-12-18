@@ -1,0 +1,108 @@
+html, body, form {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0 0 0 0px;
+	font-family: sans-serif;
+	background-color: #eee;
+	overflow: hidden;
+}
+
+.atala-ui {
+	font-size: 12px;
+}
+
+.visualizador-janela {
+	width: 750px;
+	margin: auto;
+	vertical-align: center;
+	height: 100%;
+}
+
+.visualizador-barra-ferramentas {
+	width: 735px;
+	height: 23px;
+	z-index: 1;
+	background-color: #eee;
+	display: inline-block;
+	float: center;
+	font-size: 11px;
+}
+
+.itens-processo {
+	float: left;
+	width: 210px;
+	vertical-align: top;
+	height: 100%;
+}
+
+.visualizador-documento {
+	width: 750px;
+	background-color: Silver;
+	float: center;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.visualizador-barra-ferramentas-itens {
+	display: inline-block;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.img-visualizador {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#undefined_wdv1_vp {
+	display: table !important;
+	margin: 0 auto;
+}
+
+.status-bar {
+	margin-bottom: 8px;
+	font-size: 11px;
+	color: black;
+	padding-top: 6px;
+	padding-left: 4px;
+}
+
+.salvando {
+	font-style: italic;
+	color: black;
+}
+
+.erro {
+	font-style: normal;
+	color: red;
+}
+
+.salvo {
+	font-style: normal;
+	color: black;
+}
+
+/* Estilos copiados do main.css para renderização de modal de status ("Aguarde") */
+.centered {
+	text-align: center;
+	margin: 0px auto !important;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	display: block;
+}
+
+.popupNoHeader {
+	border: 1px solid #BBBBBB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.popupNoHeader .rf-pp-cnt-scrlr {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #F3F3F0;
+}

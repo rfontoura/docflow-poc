@@ -1,0 +1,180 @@
+.atala-ui {
+	font-size: 12px;
+}
+
+.clickme {
+	height: 100%;
+	width: 7px;
+	display: inline-block;
+	margin-right: -3px;
+	background: #dddddd; /* Old browsers */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center;
+}
+
+.clickmehoverleft {
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		-moz-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* FF3.6+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		-webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd),
+		color-stop(50%, #51b4f0), color-stop(100%, #dddddd));
+	/* Chrome,Safari4+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		-webkit-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* Chrome10+,Safari5.1+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		-o-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* Opera 11.10+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		-ms-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* IE10+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center,
+		linear-gradient(to bottom, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* W3C */
+}
+
+.clickmehoverright {
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		-moz-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* FF3.6+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		-webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd),
+		color-stop(50%, #51b4f0), color-stop(100%, #dddddd));
+	/* Chrome,Safari4+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		-webkit-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* Chrome10+,Safari5.1+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		-o-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* Opera 11.10+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		-ms-linear-gradient(top, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* IE10+ */
+	background:
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center,
+		linear-gradient(to bottom, #dddddd 0%, #51b4f0 50%, #dddddd 100%);
+	/* W3C */
+}
+
+.main-viewer {
+	display: inline-block;
+	width: 755px;
+	margin: auto;
+	vertical-align: top;
+	margin-right: -5px;
+	height: 100%;
+}
+
+.atala-document-thumbs {
+	width: 130px;
+	display: inline-block;
+	margin-right: -3px;
+}
+
+.clickmeleft {
+	width: 7px;
+	display: inline-block;
+	margin-right: -3px;
+	background: #dddddd;
+	background: #dddddd
+		url("#{resource['docflow:css/visualizador/images/left_small.png']}")
+		no-repeat center;
+}
+
+.clickmeright {
+	height: 100%;
+	width: 7px;
+	display: inline-block;
+	margin-right: -3px;
+	background: #dddddd;
+	background: #dddddd
+		url("#{resource['docflow:css/visualizador/images/right_small.png']}")
+		no-repeat center;
+}
+
+.atala-document-toolbar div {
+	display: inline-block;
+}
+
+.itens-processo {
+	float: left;
+	width: 210px;
+	vertical-align: top;
+	height: 100%;
+}
+
+.atala-document-viewer {
+	overflow: hidden;
+}
+
+.inner-viewer {
+	/* */
+	
+}
+
+.status-bar {
+	margin-bottom: 8px;
+	font-size: 11px;
+	color: black;
+}
+
+.status-bar {
+	margin-bottom: 8px;
+	font-size: 11px;
+	color: black;
+}
+
+.wraptocenter {
+	text-align: center;
+	vertical-align: -7px;
+	display: inline-block;
+}
+
+#undefined_wdv1_vp {
+	display: table !important;
+	margin: 0 auto;
+}
+
+.salvando {
+	font-style: italic;
+	color: black;
+}
+
+.erro {
+	font-style: normal;
+	color: red;
+}
+
+.salvo {
+	font-style: normal;
+	color: black;
+}
+
+table.radio-escolha>td>label {
+	padding-right: 20px;
+}

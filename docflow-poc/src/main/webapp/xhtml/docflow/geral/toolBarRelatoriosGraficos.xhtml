@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:t="http://myfaces.apache.org/tomahawk"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<rich:toolbar itemSeparator="none" rendered="false">
+	
+		<!-- RELATORIOS; -->
+		<h:commandLink immediate="true"
+		               action="#{fakeBean.fakeAction}"
+		               value="#{msg.docflowMenuRelatorios}"
+		               styleClass="relatoriosicon">
+		</h:commandLink>
+		
+		<!-- GRAFICOS -->
+		<rich:dropDownMenu hideDelay="0" styleClass="graficosicon">
+				<f:facet name="label">
+						<h:outputText value="#{msg.docflowMenuGraficos}" />
+				</f:facet>
+				<rich:menuItem label="#{msg.docflowNenhumUsuarioEncontrado}" />
+					
+		</rich:dropDownMenu>
+		
+		<!-- DEPARTAMENTO GERENCIA -->
+		<rich:dropDownMenu hideDelay="0" styleClass="depgerenciaicon">
+				<f:facet name="label">
+						<h:outputText value="#{msg.docflowGerenciarDepartamento}" />
+				</f:facet>
+
+				<rich:menuItem immediate="true"
+				               action="#{fakeBean.fakeAction}"
+				               label="#{msg.docflowDistribuicaoProcessosDocumentos}">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               action="#{fakeBean.fakeAction}"
+				               label="#{msg.docflowModoDistribuicao}">
+				</rich:menuItem>
+				
+				<rich:menuItem immediate="true"
+				               action="#{fakeBean.fakeAction}"
+				               label="#{msg.docflowRedistribuicaoProcessosDocumentos}">
+				</rich:menuItem>
+		</rich:dropDownMenu>
+		
+		<!-- CHARTS DE ADMINISTRACAO -->
+		<h:commandLink action="#{fakeBean.fakeAction}"
+		               value="#{msg.docflowPanelAdministracao}"
+		               immediate="true"
+		               styleClass="auditaricon">
+		</h:commandLink>
+		
+		<!-- GERADOR DE RELATORIO -->
+		<h:commandLink immediate="true" 
+		               value="#{msg.docflowGRRelatorios}"           
+		               action="#{fakeBean.fakeAction}" 
+		               styleClass="auditaricon">
+		</h:commandLink>
+		
+		<!-- GERADOR DE GRAFICO -->
+		<h:commandLink immediate="true" 
+		               value="#{msg.docflowGGEditorGrafico}"           
+		               action="#{fakeBean.fakeAction}" 
+		               styleClass="auditaricon">
+		</h:commandLink>
+		
+		<!-- RESGATE DE CONTEUDOS -->
+		<h:commandLink immediate="true"
+					   value="#{msg.docflowResgateMenu}"
+					   action="#{fakeBean.fakeAction}"
+					   styleClass="resgateicon">
+		</h:commandLink>
+		
+	</rich:toolbar>
+</ui:composition>
